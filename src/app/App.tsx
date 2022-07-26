@@ -17,7 +17,7 @@ import {Login} from '../features/login/Login'
 import {Navigate,Route, Routes} from 'react-router-dom'
 import {initializeAppTC, loginOutTC} from "../features/TodolistsList/authReducer";
 import {CircularProgress} from "@mui/material";
-
+import style from './App.module.css'
 
 type PropsType = {
     demo?: boolean
@@ -69,7 +69,7 @@ function App({demo = false}: PropsType) {
                 </Toolbar>
                 {status === 'loading' && <LinearProgress/>}
             </AppBar>
-            <Container fixed>
+            <Container fixed className={style.container}>
                 <Routes>
                     <Route path="/" element={<TodolistsList demo={demo}/>}/>
                     <Route path="/login" element={<Login/>}/>

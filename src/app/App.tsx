@@ -71,7 +71,8 @@ function App({demo = false}: PropsType) {
             </AppBar>
             <Container fixed className={style.container}>
                 <Routes>
-                    <Route path="/" element={<TodolistsList demo={demo}/>}/>
+                    <Route path="/" element={<Navigate to={"/todolists"}/>}/>
+                    <Route path="/todolists" element={<TodolistsList demo={demo}/>}/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/404" element={<h1>404:Page Not Found 404</h1>}/>
                     <Route path="*" element={<Navigate to="/404"/>}/>
